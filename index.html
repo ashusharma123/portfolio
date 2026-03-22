@@ -3,222 +3,232 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aarush Sharma | Elite Graphic & Motion Studio</title>
+    <title>Aarush Sharma | Design Direction</title>
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;700&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
+    
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
 
     <style>
         :root {
-            --bg: #000000;
+            --bg: #0a0a0a;
+            --surface: #141414;
+            --accent: #d4af37; /* Gold */
+            --text-dim: #a0a0a0;
             --white: #ffffff;
-            --gold: #d4af37;
-            --grey: #1a1a1a;
-            --text-main: 'Inter', sans-serif;
-            --text-head: 'Syne', sans-serif;
-            --transition: 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+            --font-main: 'Plus Jakarta Sans', sans-serif;
+            --font-serif: 'Playfair Display', serif;
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { background: var(--bg); color: var(--white); font-family: var(--text-main); overflow-x: hidden; -webkit-font-smoothing: antialiased; }
+        body { 
+            background: var(--bg); 
+            color: var(--white); 
+            font-family: var(--font-main); 
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
 
-        /* Custom Scrollbar */
-        ::-webkit-scrollbar { width: 6px; }
-        ::-webkit-scrollbar-track { background: var(--bg); }
-        ::-webkit-scrollbar-thumb { background: var(--white); border-radius: 10px; }
+        /* --- Custom Cursor --- */
+        .cursor {
+            width: 15px; height: 15px; background: var(--accent);
+            border-radius: 50%; position: fixed; pointer-events: none;
+            z-index: 9999; mix-blend-mode: difference; transition: transform 0.2s ease;
+        }
 
-        /* --- Navigation --- */
+        /* --- Header --- */
         nav {
-            position: fixed; width: 100%; padding: 30px 5%;
+            position: fixed; top: 0; width: 100%; padding: 30px 6%;
             display: flex; justify-content: space-between; align-items: center;
             z-index: 1000; mix-blend-mode: difference;
         }
-        .logo { font-family: var(--text-head); font-weight: 800; font-size: 1.2rem; color: var(--white); letter-spacing: -1px; text-decoration: none; }
+        .logo { 
+            font-family: var(--font-serif); font-size: 1.5rem; 
+            font-weight: 700; text-decoration: none; color: var(--white); 
+            letter-spacing: -1px;
+        }
 
         /* --- Hero Section --- */
         .hero {
             height: 100vh; display: flex; flex-direction: column;
-            justify-content: center; align-items: center; text-align: center;
-            padding: 0 5%; position: relative;
+            justify-content: center; padding: 0 10%; position: relative;
+        }
+        .hero span { 
+            color: var(--accent); font-weight: 700; text-transform: uppercase; 
+            letter-spacing: 4px; font-size: 0.9rem; margin-bottom: 15px; display: block;
         }
         .hero h1 {
-            font-family: var(--text-head); font-weight: 800; font-size: clamp(3rem, 15vw, 10rem);
-            line-height: 0.9; text-transform: uppercase; letter-spacing: -4px; margin-bottom: 20px;
+            font-size: clamp(3.5rem, 10vw, 8rem); line-height: 1;
+            font-family: var(--font-serif); font-weight: 700;
         }
-        .hero p { font-size: clamp(1rem, 2vw, 1.2rem); opacity: 0.7; max-width: 600px; margin-bottom: 40px; }
-        .hero-line { position: absolute; bottom: 10%; width: 1px; height: 100px; background: rgba(255,255,255,0.2); }
-
-        /* --- Portfolio Grid (Bento Style) --- */
-        .portfolio { padding: 100px 5%; }
-        .section-header { margin-bottom: 60px; display: flex; justify-content: space-between; align-items: flex-end; flex-wrap: wrap; gap: 20px;}
-        .section-header h2 { font-family: var(--text-head); font-weight: 800; font-size: clamp(2rem, 5vw, 3rem); text-transform: uppercase; letter-spacing: -2px; }
-        .section-header p { opacity: 0.6; max-width: 400px; }
-
-        .grid { display: grid; grid-template-columns: repeat(12, 1fr); gap: 25px; }
-        
-        /* Bento Layout definitions */
-        .grid-item { position: relative; border-radius: 20px; overflow: hidden; background: var(--grey); transition: var(--transition); text-decoration: none; color: inherit;}
-        .grid-item.col-6 { grid-column: span 6; aspect-ratio: 16/10; }
-        .grid-item.col-4 { grid-column: span 4; aspect-ratio: 1/1; }
-        .grid-item.col-8 { grid-column: span 8; aspect-ratio: 16/9; }
-
-        .grid-item:hover { transform: translateY(-10px); }
-        .grid-item img { width: 100%; height: 100%; object-fit: cover; transition: 1s ease; }
-        .grid-item:hover img { transform: scale(1.05); filter: brightness(0.6); }
-
-        .item-details {
-            position: absolute; bottom: 0; left: 0; width: 100%; padding: 30px;
-            background: linear-gradient(transparent, rgba(0,0,0,0.8));
-            transform: translateY(20px); opacity: 0; transition: var(--transition);
+        .hero h1 i { font-weight: 400; font-family: var(--font-serif); }
+        .hero .tagline {
+            font-size: 1.2rem; color: var(--text-dim); max-width: 500px;
+            margin-top: 30px; border-left: 2px solid var(--accent); padding-left: 20px;
         }
-        .grid-item:hover .item-details { transform: translateY(0); opacity: 1; }
-        
-        .item-details h4 { font-family: var(--text-head); font-weight: 700; font-size: 1.2rem; margin-bottom: 5px; }
-        .item-details span { font-size: 0.8rem; text-transform: uppercase; letter-spacing: 2px; color: var(--gold); }
 
-        /* --- Services/Pricing Section --- */
-        .services { padding: 100px 5%; background: var(--grey); }
-        .service-list { max-width: 900px; margin: 0 auto; }
+        /* --- Bento Work Grid --- */
+        .work { padding: 100px 6%; }
+        .work-grid {
+            display: grid; grid-template-columns: repeat(12, 1fr); gap: 30px;
+        }
+        .work-card {
+            grid-column: span 6; background: var(--surface);
+            border-radius: 4px; overflow: hidden; position: relative;
+            transition: 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+            text-decoration: none; color: inherit;
+        }
+        .work-card.tall { grid-column: span 4; }
+        .work-card.wide { grid-column: span 8; }
+
+        .work-card img {
+            width: 100%; height: 100%; object-fit: cover; min-height: 400px;
+            opacity: 0.8; transition: 0.6s;
+        }
+        .work-card:hover img { transform: scale(1.05); opacity: 0.4; filter: grayscale(0); }
+
+        .card-meta {
+            position: absolute; bottom: 30px; left: 30px;
+            opacity: 0; transform: translateY(20px); transition: 0.4s;
+        }
+        .work-card:hover .card-meta { opacity: 1; transform: translateY(0); }
+        .card-meta h3 { font-family: var(--font-serif); font-size: 1.8rem; }
+        .card-meta p { color: var(--accent); text-transform: uppercase; font-size: 0.8rem; letter-spacing: 2px; }
+
+        /* --- Services --- */
+        .services { padding: 100px 10%; background: #000; }
         .service-item {
             display: flex; justify-content: space-between; align-items: center;
-            padding: 30px 0; border-bottom: 1px solid rgba(255,255,255,0.1);
-            transition: 0.3s;
+            padding: 40px 0; border-bottom: 1px solid rgba(255,255,255,0.1);
         }
-        .service-item:hover { padding-left: 20px; color: var(--gold); }
-        .service-item h3 { font-family: var(--text-head); font-size: 1.5rem; font-weight: 700; }
-        .service-item span { font-family: var(--text-head); font-weight: 700; font-size: 1.2rem; }
+        .service-item h2 { font-family: var(--font-serif); font-size: 2.5rem; font-weight: 400; }
+        .service-item:hover h2 { color: var(--accent); padding-left: 20px; transition: 0.4s; }
+        .price-tag { color: var(--accent); font-family: var(--font-serif); font-style: italic; font-size: 1.2rem; }
 
-        /* --- Buttons --- */
-        .btn {
-            padding: 15px 35px; border-radius: 5px; text-decoration: none; font-weight: 700;
-            text-transform: uppercase; font-size: 0.8rem; letter-spacing: 2px;
-            display: inline-block; transition: 0.3s; border: 2px solid var(--white); color: var(--white);
+        /* --- CTA Footer --- */
+        footer { padding: 120px 10% 60px; text-align: center; }
+        .cta-text { font-family: var(--font-serif); font-size: clamp(2rem, 6vw, 5rem); margin-bottom: 50px; }
+        .email-link { 
+            font-size: clamp(1rem, 3vw, 2rem); color: var(--white); 
+            text-decoration: none; border-bottom: 2px solid var(--accent);
+            padding-bottom: 5px;
         }
-        .btn:hover { background: var(--white); color: #000; }
 
-        /* --- Footer --- */
-        footer { padding: 80px 5%; text-align: center; border-top: 1px solid rgba(255,255,255,0.1); }
-        footer h2 { font-family: var(--text-head); font-size: 3rem; font-weight: 800; text-transform: uppercase; margin-bottom: 20px;}
-        .socials { margin: 40px 0; }
-        .socials a { color: var(--white); font-size: 1.5rem; margin: 0 15px; transition: 0.3s; }
-        .socials a:hover { color: var(--gold); transform: scale(1.1); }
-
-        /* Mobile Responsive */
+        /* --- Responsive --- */
         @media (max-width: 768px) {
-            .hero h1 { letter-spacing: -2px; }
-            .section-header { gap: 10px; }
-            .grid-item.col-6, .grid-item.col-4, .grid-item.col-8 { grid-column: span 12; aspect-ratio: 16/10; }
-            .service-item { flex-direction: column; align-items: flex-start; gap: 10px;}
+            .work-card, .work-card.tall, .work-card.wide { grid-column: span 12; }
+            .service-item { flex-direction: column; align-items: flex-start; }
+            .hero h1 { font-size: 4rem; }
         }
     </style>
 </head>
-    
-    <meta name="google-site-verification" content="1yyUdY1KPFRiqrOYAH3J220BqxfYKRrV9Hf6EBFjlWc" />
-    
 <body>
 
+    <div class="cursor" id="cursor"></div>
+
     <nav>
-        <a href="#" class="logo">AARUSH.STUDIO</a>
-        <a href="mailto:sarush066@gmail.com" class="btn" style="padding: 10px 20px; border-radius: 50px;">Connect</a>
+        <a href="#" class="logo">AARUSH SHARMA</a>
+        <a href="https://wa.me/919805871693" style="color:var(--white); text-decoration:none; font-weight:700; border: 1px solid rgba(255,255,255,0.2); padding: 10px 25px; border-radius: 50px; font-size: 0.8rem;">START A PROJECT</a>
     </nav>
 
     <section class="hero">
-        <h1 class="reveal">AARUSH<br>SHARMA</h1>
-        <p class="reveal">Crafting premium visual identities and sleek motion graphics that demand attention.</p>
-        <a href="#work" class="btn reveal">Explore Work</a>
-        <div class="hero-line"></div>
+        <span class="reveal">Visual Designer & Storyteller</span>
+        <h1 class="reveal">CRAFTING <i>Iconic</i><br>DIGITAL ART.</h1>
+        <p class="tagline reveal">Main aapke brand ko ek premium visual identity deta hoon jo market mein alag dikhti hai.</p>
     </section>
 
-    <section id="work" class="portfolio">
-        <div class="section-header">
-            <h2 class="reveal">Selected Masterpieces</h2>
-            <p class="reveal">A curation of graphic identities, brand marks, and sleek web interfaces.</p>
-        </div>
-
-        <div class="grid">
-            <a href="https://www.behance.net/gallery/177251753/portfolio" target="_blank" class="grid-item col-8 animate-in">
-                <img src="https://mir-s3-cdn-cf.behance.net/projects/404/248695177251753.Y3JvcCw4MDgsNjMyLDAsMA.jpg" alt="Wedding Branding">
-                <div class="item-details">
-                    <h4>Luxury Wedding Collections</h4>
-                    <span>Graphic Identity / Typography</span>
+    <section class="work" id="work">
+        <div class="work-grid">
+            <a href="https://www.behance.net/gallery/177251753/portfolio" target="_blank" class="work-card wide reveal">
+                <img src="https://mir-s3-cdn-cf.behance.net/projects/404/248695177251753.Y3JvcCw4MDgsNjMyLDAsMA.jpg" alt="Wedding Project">
+                <div class="card-meta">
+                    <p>Branding</p>
+                    <h3>Royal Wedding Identities</h3>
                 </div>
             </a>
 
-            <a href="https://youtu.be/WXV6sbNXRzY" target="_blank" class="grid-item col-4 animate-in">
-                <img src="images/ytt.jpg" alt="YT Intro Mockup"> <div class="item-details">
-                    <h4>YouTube Aesthetics</h4>
-                    <span>Motion Graphics / Design</span>
+            <a href="https://yatharthtourtravels.com/" target="_blank" class="work-card tall reveal">
+                <img src="images/ytt.jpg" alt="Travel Site">
+                <div class="card-meta">
+                    <p>Web Design</p>
+                    <h3>Yatharth Tour Travels</h3>
                 </div>
             </a>
 
-            <a href="https://www.behance.net/gallery/177858575/Brand-Identity" target="_blank" class="grid-item col-4 animate-in">
+            <a href="https://firevillagetournament.github.io/ChaiNagri/index.html" target="_blank" class="work-card tall reveal">
+                <img src="images/CN.png" alt="E-comm">
+                <div class="card-meta">
+                    <p>E-commerce UI</p>
+                    <h3>Chai Nagri Brand</h3>
+                </div>
+            </a>
+
+            <a href="https://www.behance.net/gallery/177858575/Brand-Identity" target="_blank" class="work-card wide reveal">
                 <img src="https://mir-s3-cdn-cf.behance.net/projects/404/177858575.Y3JvcCw4MDgsNjMyLDAsMA.jpg" alt="Logo Design">
-                <div class="item-details">
-                    <h4>Corporate Branding</h4>
-                    <span>Logo Design / Minimalism</span>
-                </div>
-            </a>
-
-            <a href="https://firevillagetournament.github.io/ChaiNagri/index.html" target="_blank" class="grid-item col-6 animate-in">
-                <img src="images/CN.png" alt="Chai Nagri Web UI">
-                <div class="item-details">
-                    <h4>Chai Nagri E-comm</h4>
-                    <span>Web UI Design</span>
-                </div>
-            </a>
-
-            <a href="https://skillpe.github.io/skillpe/" target="_blank" class="grid-item col-6 animate-in">
-                <img src="images/sp.png" alt="SkillPe Web UI">
-                <div class="item-details">
-                    <h4>SkillPe Dashboard</h4>
-                    <span>Web UI Design</span>
+                <div class="card-meta">
+                    <p>Minimalism</p>
+                    <h3>Corporate Brand Guide</h3>
                 </div>
             </a>
         </div>
     </section>
 
     <section class="services">
-        <div class="section-header">
-            <h2 style="color:var(--gold);">Investment Plans</h2>
-            <p>Transparent pricing for premium graphic and motion design services.</p>
+        <div class="service-item reveal">
+            <h2>Brand Identity Design</h2>
+            <div class="price-tag">Starts ₹5,000</div>
         </div>
-        
-        <div class="service-list">
-            <div class="service-item animate-in"> <h3>Thumbnail Design</h3> <span>₹300 - ₹800</span> </div>
-            <div class="service-item animate-in"> <h3>Poster / Album Art</h3> <span>₹500 - ₹2000</span> </div>
-            <div class="service-item animate-in"> <h3>Corporate Logo Design</h3> <span>₹3000 - ₹8000</span> </div>
-            <div class="service-item animate-in"> <h3>YT Intro + Outro Pack</h3> <span>₹2000 - ₹6000</span> </div>
-            <div class="service-item animate-in"> <h3>Explainer Video (30-60s)</h3> <span>₹5000+</span> </div>
+        <div class="service-item reveal">
+            <h2>High-End Motion Graphics</h2>
+            <div class="price-tag">Starts ₹3,500</div>
+        </div>
+        <div class="service-item reveal">
+            <h2>Premium UI/UX Design</h2>
+            <div class="price-tag">Starts ₹8,000</div>
         </div>
     </section>
 
     <footer>
-        <h2 class="reveal">Have a Vision?</h2>
-        <a href="mailto:sarush066@gmail.com" class="btn reveal">Let's Create Magic</a>
-        <div class="socials">
-            <a href="https://www.instagram.com/pandit.2.0/"><i class="fab fa-instagram"></i></a>
-            <a href="https://wa.me/919805871693"><i class="fab fa-whatsapp"></i></a>
+        <h2 class="cta-text">Tayyar hain kuch<br>Naya banane ke liye?</h2>
+        <a href="mailto:sarush066@gmail.com" class="email-link">sarush066@gmail.com</a>
+        
+        <div style="margin-top: 50px;">
+            <a href="https://www.instagram.com/pandit.2.0/" style="color:var(--text-dim); margin:0 15px; text-decoration:none;"><i class="fab fa-instagram"></i> INSTAGRAM</a>
+            <a href="https://wa.me/919805871693" style="color:var(--text-dim); margin:0 15px; text-decoration:none;"><i class="fab fa-whatsapp"></i> WHATSAPP</a>
         </div>
-        <p style="font-size: 0.7rem; opacity: 0.4;">© 2026 AARUSH SHARMA STUDIO. ALL RIGHTS RESERVED.</p>
+        <p style="margin-top: 80px; font-size: 0.7rem; color: var(--text-dim); letter-spacing: 2px;">© 2026 AARUSH SHARMA STUDIO</p>
     </footer>
 
     <script>
+        // Custom Cursor Movement
+        const cursor = document.getElementById('cursor');
+        document.addEventListener('mousemove', (e) => {
+            cursor.style.left = e.clientX + 'px';
+            cursor.style.top = e.clientY + 'px';
+        });
+
         // GSAP Animations
         gsap.registerPlugin(ScrollTrigger);
 
-        // Hero Entrance
+        // Text reveal animation
         gsap.from(".reveal", {
-            y: 70, opacity: 0, duration: 1.5, ease: "power4.out", stagger: 0.2
+            scrollTrigger: {
+                trigger: ".reveal",
+                start: "top 90%",
+            },
+            y: 50,
+            opacity: 0,
+            duration: 1.2,
+            stagger: 0.2,
+            ease: "power4.out"
         });
 
-        // Scroll Reveal for Grid items & Services
-        gsap.utils.toArray(".animate-in").forEach((item) => {
-            gsap.from(item, {
-                scrollTrigger: { trigger: item, start: "top 85%" },
-                y: 50, opacity: 0, duration: 1, ease: "power2.out"
-            });
+        // Image hover effect trigger for cursor
+        document.querySelectorAll('.work-card, .btn, .email-link').forEach(el => {
+            el.addEventListener('mouseenter', () => cursor.style.transform = 'scale(4)');
+            el.addEventListener('mouseleave', () => cursor.style.transform = 'scale(1)');
         });
     </script>
 </body>
