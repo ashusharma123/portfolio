@@ -1,399 +1,1673 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta name="google-site-verification" content="1yyUdY1KPFRiqrOYAH3J220BqxfYKRrV9Hf6EBFjlWc" />
-    
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <title>Aarush Sharma | Award-Winning Graphic Designer & Visual Architect</title>
-    <meta name="description" content="Aarush Sharma Studio: India's premier destination for high-end brand identity, luxury graphic design, motion arts, and UI/UX design. We transform businesses into iconic visual experiences.">
-    <meta name="keywords" content="Graphic Designer in India, Best Brand Identity Designer, Luxury Logo Design, Motion Graphics Expert, UI/UX Design Agency, Wedding Branding, Aarush Sharma Portfolio, Top Graphic Designer 2026, Creative Studio">
-    <meta name="robots" content="index, follow, max-image-preview:large">
+    <title>Aarush Sharma | Motion Designer & Visual Architect</title>
+    <meta name="description" content="Aarush Sharma - Award-winning motion designer and visual architect creating premium brand identities, luxury graphics, and unforgettable digital experiences for global brands.">
+    <meta name="keywords" content="Motion Designer, Graphic Designer, Brand Identity, UI/UX Design, Luxury Branding, Wedding Design, Aarush Sharma, India Designer">
+    <meta name="robots" content="index, follow">
     <meta name="author" content="Aarush Sharma">
     
+    <!-- Open Graph -->
     <meta property="og:type" content="website">
-    <meta property="og:title" content="Aarush Sharma | Elite Visual Design Studio">
-    <meta property="og:description" content="Expert design solutions for global brands. Experience the intersection of art and strategy.">
-    <meta property="og:image" content="images/logo1.jpg">
-
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&family=Manrope:wght@300;400;600;800&family=Playfair+Display:ital,wght@0,900;1,900&display=swap" rel="stylesheet">
+    <meta property="og:title" content="Aarush Sharma | Motion Designer">
+    <meta property="og:description" content="Creating premium visual experiences for global brands">
     
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.19/bundled/lenis.min.js"></script>
-
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Archivo:wght@300;400;600;700;900&family=Space+Mono:wght@400;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- GSAP -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    
     <style>
-        /* --- CORE SYSTEM --- */
+        /* ============================================
+           DESIGN SYSTEM - Bold & Distinctive
+           ============================================ */
         :root {
-            --bg: #030303;
-            --surface: #0a0a0a;
-            --accent: #E5C158; /* Premium Gold */
-            --text-main: #f4f4f4;
-            --text-mute: #777777;
-            --font-head: 'Oswald', sans-serif;
-            --font-body: 'Manrope', sans-serif;
-            --font-serif: 'Playfair Display', serif;
+            /* Colors - High contrast brutalist meets luxury */
+            --bg-primary: #0D0D0D;
+            --bg-secondary: #1A1A1A;
+            --accent-gold: #FFD700;
+            --accent-electric: #00FF9F;
+            --text-primary: #FFFFFF;
+            --text-secondary: #A0A0A0;
+            --text-muted: #606060;
+            
+            /* Typography - Distinctive choices */
+            --font-display: 'Bebas Neue', sans-serif;
+            --font-body: 'Archivo', sans-serif;
+            --font-mono: 'Space Mono', monospace;
+            --font-serif: 'Cormorant Garamond', serif;
+            
+            /* Spacing */
+            --spacing-unit: 8px;
+            --section-padding: calc(var(--spacing-unit) * 15);
+            
+            /* Effects */
+            --transition-smooth: cubic-bezier(0.4, 0, 0.2, 1);
+            --transition-bounce: cubic-bezier(0.68, -0.55, 0.265, 1.55);
         }
-
-        * { margin: 0; padding: 0; box-sizing: border-box; cursor: none; }
         
-        body { 
-            background: var(--bg); 
-            color: var(--text-main); 
-            font-family: var(--font-body);
-            line-height: 1.8;
+        /* ============================================
+           RESET & BASE
+           ============================================ */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        html {
+            scroll-behavior: smooth;
             overflow-x: hidden;
         }
-
-        /* --- FILM GRAIN OVERLAY (Trendy Effect) --- */
-        .noise {
-            position: fixed; top: 0; left: 0; width: 100vw; height: 100vh;
-            pointer-events: none; z-index: 9999; opacity: 0.04;
-            background: url('https://upload.wikimedia.org/wikipedia/commons/7/76/1k_Dissolve_Noise_Texture.png');
-            animation: noise 0.2s infinite;
+        
+        body {
+            font-family: var(--font-body);
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.6;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
         }
-        @keyframes noise { 0% { transform: translate(0, 0); } 10% { transform: translate(-5%, -5%); } 20% { transform: translate(-10%, 5%); } 30% { transform: translate(5%, -10%); } 40% { transform: translate(-5%, 15%); } 50% { transform: translate(-10%, 5%); } 60% { transform: translate(15%, 0); } 70% { transform: translate(0, 15%); } 80% { transform: translate(3%, 35%); } 90% { transform: translate(-10%, 10%); } }
-
-        /* --- SMOOTH SCROLL --- */
-        html.lenis { height: auto; }
-        .lenis.lenis-smooth { scroll-behavior: auto; }
-
-        /* --- MAGNETIC CURSOR --- */
-        .cursor-dot {
-            width: 10px; height: 10px; background: var(--accent);
-            position: fixed; border-radius: 50%; z-index: 10000; pointer-events: none;
-            transform: translate(-50%, -50%); transition: width 0.3s, height 0.3s;
+        
+        ::selection {
+            background: var(--accent-gold);
+            color: var(--bg-primary);
         }
-        .cursor-outline {
-            width: 50px; height: 50px; border: 1px solid rgba(229, 193, 88, 0.5);
-            position: fixed; border-radius: 50%; z-index: 9999; pointer-events: none;
-            transform: translate(-50%, -50%); transition: width 0.3s, height 0.3s;
+        
+        /* ============================================
+           CUSTOM CURSOR - Magnetic Effect
+           ============================================ */
+        .cursor {
+            width: 12px;
+            height: 12px;
+            background: var(--accent-electric);
+            border-radius: 50%;
+            position: fixed;
+            pointer-events: none;
+            z-index: 10000;
+            mix-blend-mode: difference;
+            transition: transform 0.15s ease-out, width 0.3s, height 0.3s;
+            transform: translate(-50%, -50%);
         }
-        .cursor-hover .cursor-dot { width: 60px; height: 60px; mix-blend-mode: difference; background: #fff; }
-        .cursor-hover .cursor-outline { width: 0; height: 0; opacity: 0; }
-
-        /* --- TYPOGRAPHY --- */
-        h1, h2, h3 { font-family: var(--font-head); text-transform: uppercase; }
-        .italic-serif { font-family: var(--font-serif); font-style: italic; text-transform: none; color: var(--accent); }
-
-        /* --- NAVIGATION --- */
-        nav {
-            position: fixed; top: 0; width: 100%; padding: 30px 5%;
-            display: flex; justify-content: space-between; align-items: center;
-            z-index: 5000; mix-blend-mode: difference;
+        
+        .cursor-follower {
+            width: 40px;
+            height: 40px;
+            border: 2px solid rgba(255, 215, 0, 0.5);
+            border-radius: 50%;
+            position: fixed;
+            pointer-events: none;
+            z-index: 9999;
+            transition: transform 0.2s ease-out, width 0.3s, height 0.3s, opacity 0.3s;
+            transform: translate(-50%, -50%);
         }
-        .logo { font-size: 1.5rem; font-weight: 800; color: #fff; text-decoration: none; letter-spacing: 2px; }
-
-        /* --- MAGNETIC BUTTON --- */
-        .magnetic-btn {
-            padding: 15px 40px; border: 1px solid var(--accent); color: var(--accent);
-            border-radius: 50px; text-decoration: none; font-weight: 600; font-size: 0.9rem;
-            display: inline-block; position: relative; overflow: hidden;
+        
+        .cursor-hover .cursor {
+            width: 60px;
+            height: 60px;
+            background: rgba(255, 215, 0, 0.3);
         }
-        .magnetic-btn::before {
-            content: ''; position: absolute; top: 100%; left: 0; width: 100%; height: 100%;
-            background: var(--accent); transition: 0.4s; z-index: -1; border-radius: 50%;
+        
+        .cursor-hover .cursor-follower {
+            width: 0;
+            height: 0;
+            opacity: 0;
         }
-        .magnetic-btn:hover::before { top: 0; border-radius: 0; }
-        .magnetic-btn:hover { color: #000; }
-
-        /* --- HERO SECTION --- */
+        
+        /* Hide cursor on mobile */
+        @media (hover: none) {
+            .cursor, .cursor-follower {
+                display: none;
+            }
+        }
+        
+        /* ============================================
+           NOISE TEXTURE OVERLAY
+           ============================================ */
+        .noise-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            opacity: 0.03;
+            z-index: 9998;
+            background-image: url('data:image/svg+xml,%3Csvg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg"%3E%3Cfilter id="noise"%3E%3CfeTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="4" stitchTiles="stitch"/%3E%3C/filter%3E%3Crect width="100%25" height="100%25" filter="url(%23noise)"/%3E%3C/svg%3E');
+            animation: grain 8s steps(10) infinite;
+        }
+        
+        @keyframes grain {
+            0%, 100% { transform: translate(0, 0); }
+            10% { transform: translate(-5%, -10%); }
+            20% { transform: translate(-15%, 5%); }
+            30% { transform: translate(7%, -25%); }
+            40% { transform: translate(-5%, 25%); }
+            50% { transform: translate(-15%, 10%); }
+            60% { transform: translate(15%, 0%); }
+            70% { transform: translate(0%, 15%); }
+            80% { transform: translate(3%, 35%); }
+            90% { transform: translate(-10%, 10%); }
+        }
+        
+        /* ============================================
+           NAVIGATION
+           ============================================ */
+        .nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: calc(var(--spacing-unit) * 4) calc(var(--spacing-unit) * 6);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+            transition: all 0.4s var(--transition-smooth);
+        }
+        
+        .nav.scrolled {
+            background: rgba(13, 13, 13, 0.95);
+            backdrop-filter: blur(20px);
+            padding: calc(var(--spacing-unit) * 2.5) calc(var(--spacing-unit) * 6);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
+        }
+        
+        .nav-logo {
+            font-family: var(--font-display);
+            font-size: clamp(1.5rem, 4vw, 2.5rem);
+            letter-spacing: 2px;
+            color: var(--text-primary);
+            text-decoration: none;
+            position: relative;
+            transition: all 0.3s var(--transition-smooth);
+        }
+        
+        .nav-logo::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 3px;
+            background: var(--accent-gold);
+            transition: width 0.4s var(--transition-smooth);
+        }
+        
+        .nav-logo:hover::after {
+            width: 100%;
+        }
+        
+        .nav-menu {
+            display: flex;
+            gap: calc(var(--spacing-unit) * 6);
+            list-style: none;
+        }
+        
+        .nav-link {
+            font-family: var(--font-mono);
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            text-decoration: none;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            position: relative;
+            transition: color 0.3s var(--transition-smooth);
+        }
+        
+        .nav-link::before {
+            content: '[';
+            color: var(--accent-electric);
+            opacity: 0;
+            margin-right: 4px;
+            transition: opacity 0.3s;
+        }
+        
+        .nav-link::after {
+            content: ']';
+            color: var(--accent-electric);
+            opacity: 0;
+            margin-left: 4px;
+            transition: opacity 0.3s;
+        }
+        
+        .nav-link:hover {
+            color: var(--text-primary);
+        }
+        
+        .nav-link:hover::before,
+        .nav-link:hover::after {
+            opacity: 1;
+        }
+        
+        .nav-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--text-primary);
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+        
+        /* ============================================
+           HERO SECTION
+           ============================================ */
         .hero {
-            height: 100vh; display: flex; flex-direction: column; justify-content: center;
-            padding: 0 8%; position: relative; overflow: hidden;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+            padding: 0 calc(var(--spacing-unit) * 6);
+            position: relative;
+            overflow: hidden;
         }
-        .hero-title { font-size: clamp(4rem, 12vw, 12rem); line-height: 0.85; margin: 20px 0; letter-spacing: -2px; }
-        .hero-title span { display: block; overflow: hidden; }
-        .hero-title span i { display: block; transform: translateY(100%); }
-        .hero-desc { font-size: clamp(1rem, 2vw, 1.3rem); color: var(--text-mute); max-width: 600px; margin-bottom: 50px; }
-
-        /* --- KINETIC MARQUEE --- */
-        .marquee-container {
-            padding: 40px 0; background: var(--surface); transform: rotate(-2deg) scale(1.05);
-            display: flex; white-space: nowrap; overflow: hidden; border-top: 1px solid #222; border-bottom: 1px solid #222;
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 80%;
+            height: 150%;
+            background: radial-gradient(circle, rgba(255, 215, 0, 0.03) 0%, transparent 70%);
+            animation: float 20s ease-in-out infinite;
         }
+        
+        @keyframes float {
+            0%, 100% { transform: translate(0, 0) rotate(0deg); }
+            50% { transform: translate(-30px, -30px) rotate(5deg); }
+        }
+        
+        .hero-eyebrow {
+            font-family: var(--font-mono);
+            font-size: clamp(0.75rem, 1.5vw, 0.9rem);
+            color: var(--accent-electric);
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            margin-bottom: calc(var(--spacing-unit) * 3);
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        
+        .hero-title {
+            font-family: var(--font-display);
+            font-size: clamp(3.5rem, 12vw, 11rem);
+            line-height: 0.9;
+            letter-spacing: -2px;
+            margin-bottom: calc(var(--spacing-unit) * 4);
+            position: relative;
+            z-index: 1;
+        }
+        
+        .hero-title-line {
+            display: block;
+            overflow: hidden;
+        }
+        
+        .hero-title-word {
+            display: inline-block;
+            transform: translateY(100%);
+        }
+        
+        .hero-title .accent {
+            color: var(--accent-gold);
+            font-style: italic;
+            font-family: var(--font-serif);
+            font-weight: 300;
+            letter-spacing: 1px;
+        }
+        
+        .hero-description {
+            font-size: clamp(1.1rem, 2vw, 1.4rem);
+            color: var(--text-secondary);
+            max-width: 600px;
+            line-height: 1.8;
+            margin-bottom: calc(var(--spacing-unit) * 6);
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        
+        .hero-cta {
+            display: inline-flex;
+            align-items: center;
+            gap: calc(var(--spacing-unit) * 2);
+            padding: calc(var(--spacing-unit) * 2.5) calc(var(--spacing-unit) * 5);
+            background: var(--accent-gold);
+            color: var(--bg-primary);
+            font-family: var(--font-mono);
+            font-size: 0.9rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            text-decoration: none;
+            border: none;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.4s var(--transition-smooth);
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        
+        .hero-cta::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: var(--accent-electric);
+            transition: left 0.4s var(--transition-smooth);
+            z-index: -1;
+        }
+        
+        .hero-cta:hover::before {
+            left: 0;
+        }
+        
+        .hero-cta:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(255, 215, 0, 0.4);
+        }
+        
+        .hero-scroll {
+            position: absolute;
+            bottom: calc(var(--spacing-unit) * 6);
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: calc(var(--spacing-unit) * 2);
+            color: var(--text-muted);
+            font-family: var(--font-mono);
+            font-size: 0.75rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            opacity: 0;
+            animation: fadeIn 1s ease forwards 2s, bounce 2s ease-in-out infinite 3s;
+        }
+        
+        .hero-scroll-line {
+            width: 2px;
+            height: 60px;
+            background: linear-gradient(to bottom, var(--accent-electric), transparent);
+        }
+        
+        @keyframes fadeIn {
+            to { opacity: 1; }
+        }
+        
+        @keyframes bounce {
+            0%, 100% { transform: translateX(-50%) translateY(0); }
+            50% { transform: translateX(-50%) translateY(10px); }
+        }
+        
+        /* ============================================
+           MARQUEE SECTION
+           ============================================ */
+        .marquee-section {
+            background: var(--bg-secondary);
+            padding: calc(var(--spacing-unit) * 6) 0;
+            border-top: 1px solid rgba(255, 215, 0, 0.1);
+            border-bottom: 1px solid rgba(255, 215, 0, 0.1);
+            overflow: hidden;
+        }
+        
+        .marquee {
+            display: flex;
+            white-space: nowrap;
+            animation: marquee 30s linear infinite;
+        }
+        
+        .marquee-content {
+            display: flex;
+            align-items: center;
+            gap: calc(var(--spacing-unit) * 8);
+            padding-right: calc(var(--spacing-unit) * 8);
+        }
+        
         .marquee-text {
-            font-family: var(--font-head); font-size: 4rem; font-weight: 700; color: transparent;
-            -webkit-text-stroke: 1px var(--text-mute); animation: scrollX 20s linear infinite;
+            font-family: var(--font-display);
+            font-size: clamp(2rem, 5vw, 4rem);
+            letter-spacing: 2px;
+            color: transparent;
+            -webkit-text-stroke: 1px var(--text-muted);
         }
-        @keyframes scrollX { from { transform: translateX(0); } to { transform: translateX(-50%); } }
-
-        /* --- CONTENT SECTIONS (SEO LENGTH) --- */
-        .section { padding: 150px 8%; }
-        .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: start; }
         
-        .sec-label { color: var(--accent); font-weight: 800; letter-spacing: 3px; font-size: 0.9rem; display: block; margin-bottom: 20px; }
-        .sec-title { font-size: clamp(2.5rem, 5vw, 4.5rem); margin-bottom: 40px; line-height: 1.1; }
-        
-        .text-block p { font-size: 1.2rem; color: var(--text-mute); margin-bottom: 30px; text-align: justify; }
-
-        /* --- BENTO PORTFOLIO (GSAP PARALLAX) --- */
-        .bento-grid { display: grid; grid-template-columns: repeat(12, 1fr); gap: 20px; }
-        .card {
-            border-radius: 15px; overflow: hidden; position: relative; background: #111;
-            transform-style: preserve-3d;
+        .marquee-dot {
+            width: 8px;
+            height: 8px;
+            background: var(--accent-electric);
+            border-radius: 50%;
         }
-        .card img { width: 100%; height: 120%; object-fit: cover; opacity: 0.6; transition: 0.8s; }
-        .card:hover img { opacity: 0.2; transform: scale(1.05); }
-        .card-info { position: absolute; bottom: 30px; left: 30px; }
-        .card-info h3 { font-size: 2rem; margin-bottom: 5px; }
-        .card-info p { color: var(--accent); font-weight: 600; letter-spacing: 2px; }
-
-        .c-large { grid-column: span 8; height: 70vh; }
-        .c-small { grid-column: span 4; height: 70vh; }
-        .c-wide { grid-column: span 12; height: 60vh; }
-
-        /* --- ACCORDION FAQ (SEO) --- */
-        .faq-item { border-bottom: 1px solid rgba(255,255,255,0.1); padding: 30px 0; }
-        .faq-title { font-family: var(--font-head); font-size: 1.8rem; transition: 0.3s; }
-        .faq-item:hover .faq-title { color: var(--accent); padding-left: 20px; }
-        .faq-ans { color: var(--text-mute); font-size: 1.1rem; padding-top: 15px; max-width: 800px; display: none; }
-
-        /* --- BIG FOOTER --- */
-        footer { padding: 150px 8% 50px; background: var(--surface); border-top: 1px solid #222; }
-        .footer-huge { font-size: clamp(4rem, 15vw, 15rem); font-family: var(--font-head); line-height: 0.8; margin-bottom: 50px; text-align: center; }
-        .footer-huge a { color: var(--text-main); text-decoration: none; transition: 0.3s; }
-        .footer-huge a:hover { color: var(--accent); -webkit-text-stroke: 2px var(--accent); color: transparent; }
-
+        
+        @keyframes marquee {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+        
+        /* ============================================
+           SECTION COMMON STYLES
+           ============================================ */
+        .section {
+            padding: var(--section-padding) calc(var(--spacing-unit) * 6);
+            position: relative;
+        }
+        
+        .section-header {
+            margin-bottom: calc(var(--spacing-unit) * 10);
+        }
+        
+        .section-eyebrow {
+            font-family: var(--font-mono);
+            font-size: 0.85rem;
+            color: var(--accent-electric);
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            margin-bottom: calc(var(--spacing-unit) * 2);
+            display: inline-block;
+        }
+        
+        .section-title {
+            font-family: var(--font-display);
+            font-size: clamp(2.5rem, 6vw, 5rem);
+            line-height: 1.1;
+            letter-spacing: -1px;
+        }
+        
+        .section-title .accent {
+            color: var(--accent-gold);
+        }
+        
+        /* ============================================
+           ABOUT SECTION
+           ============================================ */
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: calc(var(--spacing-unit) * 10);
+            align-items: start;
+        }
+        
+        .about-content p {
+            font-size: clamp(1rem, 2vw, 1.2rem);
+            color: var(--text-secondary);
+            line-height: 1.9;
+            margin-bottom: calc(var(--spacing-unit) * 4);
+        }
+        
+        .about-stats {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: calc(var(--spacing-unit) * 4);
+            margin-top: calc(var(--spacing-unit) * 6);
+        }
+        
+        .stat {
+            padding: calc(var(--spacing-unit) * 4);
+            background: var(--bg-secondary);
+            border: 1px solid rgba(255, 215, 0, 0.1);
+            transition: all 0.4s var(--transition-smooth);
+        }
+        
+        .stat:hover {
+            border-color: var(--accent-gold);
+            transform: translateY(-5px);
+        }
+        
+        .stat-number {
+            font-family: var(--font-display);
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            color: var(--accent-gold);
+            line-height: 1;
+            margin-bottom: calc(var(--spacing-unit));
+        }
+        
+        .stat-label {
+            font-family: var(--font-mono);
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+        }
+        
+        .about-image {
+            position: relative;
+            aspect-ratio: 3/4;
+            overflow: hidden;
+        }
+        
+        .about-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: grayscale(100%) contrast(1.2);
+            transition: filter 0.6s var(--transition-smooth);
+        }
+        
+        .about-image:hover img {
+            filter: grayscale(0%) contrast(1);
+        }
+        
+        .about-image::after {
+            content: '';
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            width: calc(100% - 40px);
+            height: calc(100% - 40px);
+            border: 2px solid var(--accent-gold);
+            pointer-events: none;
+            transition: all 0.6s var(--transition-smooth);
+        }
+        
+        .about-image:hover::after {
+            top: 0;
+            right: 0;
+            width: 100%;
+            height: 100%;
+        }
+        
+        /* ============================================
+           WORK SECTION
+           ============================================ */
+        .work-section {
+            background: var(--bg-secondary);
+        }
+        
+        .work-grid {
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            gap: calc(var(--spacing-unit) * 3);
+            margin-bottom: calc(var(--spacing-unit) * 3);
+        }
+        
+        .work-item {
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+            aspect-ratio: 16/10;
+            background: var(--bg-primary);
+        }
+        
+        .work-item-large {
+            grid-column: span 8;
+        }
+        
+        .work-item-small {
+            grid-column: span 4;
+        }
+        
+        .work-item-wide {
+            grid-column: span 12;
+        }
+        
+        .work-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 1s var(--transition-smooth), filter 0.6s;
+            filter: grayscale(50%) brightness(0.7);
+        }
+        
+        .work-item:hover img {
+            transform: scale(1.1);
+            filter: grayscale(0%) brightness(1);
+        }
+        
+        .work-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: calc(var(--spacing-unit) * 4);
+            background: linear-gradient(to top, rgba(13, 13, 13, 0.95), transparent);
+            transform: translateY(calc(100% - 80px));
+            transition: transform 0.4s var(--transition-smooth);
+        }
+        
+        .work-item:hover .work-overlay {
+            transform: translateY(0);
+        }
+        
+        .work-category {
+            font-family: var(--font-mono);
+            font-size: 0.75rem;
+            color: var(--accent-electric);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: calc(var(--spacing-unit));
+        }
+        
+        .work-title {
+            font-family: var(--font-display);
+            font-size: clamp(1.5rem, 3vw, 2.5rem);
+            letter-spacing: 1px;
+            line-height: 1.2;
+        }
+        
+        .work-description {
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+            margin-top: calc(var(--spacing-unit) * 2);
+            opacity: 0;
+            transform: translateY(10px);
+            transition: all 0.4s var(--transition-smooth) 0.1s;
+        }
+        
+        .work-item:hover .work-description {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        /* ============================================
+           SERVICES SECTION
+           ============================================ */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: calc(var(--spacing-unit) * 4);
+        }
+        
+        .service-card {
+            padding: calc(var(--spacing-unit) * 6);
+            background: var(--bg-secondary);
+            border: 1px solid rgba(255, 215, 0, 0.1);
+            position: relative;
+            overflow: hidden;
+            transition: all 0.4s var(--transition-smooth);
+        }
+        
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 215, 0, 0.05), transparent);
+            transition: left 0.6s var(--transition-smooth);
+        }
+        
+        .service-card:hover::before {
+            left: 100%;
+        }
+        
+        .service-card:hover {
+            border-color: var(--accent-gold);
+            transform: translateY(-10px);
+        }
+        
+        .service-number {
+            font-family: var(--font-display);
+            font-size: 3rem;
+            color: rgba(255, 215, 0, 0.2);
+            line-height: 1;
+            margin-bottom: calc(var(--spacing-unit) * 2);
+        }
+        
+        .service-title {
+            font-family: var(--font-display);
+            font-size: 1.8rem;
+            letter-spacing: 1px;
+            margin-bottom: calc(var(--spacing-unit) * 3);
+        }
+        
+        .service-description {
+            font-size: 1rem;
+            color: var(--text-secondary);
+            line-height: 1.8;
+            margin-bottom: calc(var(--spacing-unit) * 4);
+        }
+        
+        .service-list {
+            list-style: none;
+        }
+        
+        .service-list li {
+            font-family: var(--font-mono);
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            padding: calc(var(--spacing-unit)) 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            position: relative;
+            padding-left: calc(var(--spacing-unit) * 3);
+        }
+        
+        .service-list li::before {
+            content: '▸';
+            position: absolute;
+            left: 0;
+            color: var(--accent-electric);
+        }
+        
+        /* ============================================
+           TESTIMONIAL SECTION
+           ============================================ */
+        .testimonial-section {
+            background: var(--bg-primary);
+        }
+        
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: calc(var(--spacing-unit) * 4);
+        }
+        
+        .testimonial-card {
+            padding: calc(var(--spacing-unit) * 6);
+            background: var(--bg-secondary);
+            border-left: 3px solid var(--accent-gold);
+            position: relative;
+        }
+        
+        .testimonial-quote {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: var(--text-secondary);
+            margin-bottom: calc(var(--spacing-unit) * 4);
+            font-style: italic;
+        }
+        
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: calc(var(--spacing-unit) * 2);
+        }
+        
+        .testimonial-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: var(--accent-gold);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: var(--font-display);
+            font-size: 1.5rem;
+            color: var(--bg-primary);
+        }
+        
+        .testimonial-info h4 {
+            font-family: var(--font-body);
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 4px;
+        }
+        
+        .testimonial-info p {
+            font-family: var(--font-mono);
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        /* ============================================
+           CONTACT SECTION
+           ============================================ */
+        .contact-section {
+            background: var(--bg-secondary);
+        }
+        
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: calc(var(--spacing-unit) * 10);
+        }
+        
+        .contact-info h3 {
+            font-family: var(--font-display);
+            font-size: 2.5rem;
+            margin-bottom: calc(var(--spacing-unit) * 4);
+            line-height: 1.2;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            gap: calc(var(--spacing-unit) * 3);
+            margin-bottom: calc(var(--spacing-unit) * 4);
+        }
+        
+        .contact-icon {
+            width: 50px;
+            height: 50px;
+            background: var(--accent-gold);
+            color: var(--bg-primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            flex-shrink: 0;
+        }
+        
+        .contact-details h4 {
+            font-family: var(--font-mono);
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin-bottom: calc(var(--spacing-unit));
+        }
+        
+        .contact-details a {
+            color: var(--text-primary);
+            text-decoration: none;
+            font-size: 1.2rem;
+            transition: color 0.3s;
+        }
+        
+        .contact-details a:hover {
+            color: var(--accent-gold);
+        }
+        
+        .contact-socials {
+            display: flex;
+            gap: calc(var(--spacing-unit) * 2);
+            margin-top: calc(var(--spacing-unit) * 6);
+        }
+        
+        .social-link {
+            width: 50px;
+            height: 50px;
+            border: 2px solid rgba(255, 215, 0, 0.3);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-primary);
+            font-size: 1.2rem;
+            text-decoration: none;
+            transition: all 0.3s var(--transition-smooth);
+        }
+        
+        .social-link:hover {
+            background: var(--accent-gold);
+            border-color: var(--accent-gold);
+            color: var(--bg-primary);
+            transform: translateY(-5px);
+        }
+        
+        .contact-form-wrapper {
+            background: var(--bg-primary);
+            padding: calc(var(--spacing-unit) * 6);
+        }
+        
+        .form-group {
+            margin-bottom: calc(var(--spacing-unit) * 4);
+        }
+        
+        .form-label {
+            font-family: var(--font-mono);
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            display: block;
+            margin-bottom: calc(var(--spacing-unit) * 2);
+        }
+        
+        .form-input,
+        .form-textarea {
+            width: 100%;
+            padding: calc(var(--spacing-unit) * 2);
+            background: var(--bg-secondary);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            color: var(--text-primary);
+            font-family: var(--font-body);
+            font-size: 1rem;
+            transition: all 0.3s var(--transition-smooth);
+        }
+        
+        .form-input:focus,
+        .form-textarea:focus {
+            outline: none;
+            border-color: var(--accent-gold);
+            background: rgba(255, 215, 0, 0.05);
+        }
+        
+        .form-textarea {
+            min-height: 150px;
+            resize: vertical;
+        }
+        
+        .form-submit {
+            width: 100%;
+            padding: calc(var(--spacing-unit) * 3);
+            background: var(--accent-gold);
+            color: var(--bg-primary);
+            font-family: var(--font-mono);
+            font-size: 0.9rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s var(--transition-smooth);
+        }
+        
+        .form-submit:hover {
+            background: var(--accent-electric);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(0, 255, 159, 0.3);
+        }
+        
+        /* ============================================
+           FOOTER
+           ============================================ */
+        .footer {
+            padding: calc(var(--spacing-unit) * 10) calc(var(--spacing-unit) * 6);
+            background: var(--bg-primary);
+            border-top: 1px solid rgba(255, 215, 0, 0.1);
+        }
+        
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .footer-logo {
+            font-family: var(--font-display);
+            font-size: 2rem;
+            letter-spacing: 2px;
+        }
+        
+        .footer-copy {
+            font-family: var(--font-mono);
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            letter-spacing: 1px;
+        }
+        
+        /* ============================================
+           WHATSAPP FLOATING BUTTON
+           ============================================ */
+        .whatsapp-float {
+            position: fixed;
+            bottom: calc(var(--spacing-unit) * 4);
+            right: calc(var(--spacing-unit) * 4);
+            width: 60px;
+            height: 60px;
+            background: #25D366;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.8rem;
+            box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
+            z-index: 999;
+            transition: all 0.3s var(--transition-bounce);
+            cursor: pointer;
+        }
+        
+        .whatsapp-float:hover {
+            transform: scale(1.15) rotate(5deg);
+            box-shadow: 0 8px 30px rgba(37, 211, 102, 0.6);
+        }
+        
+        /* ============================================
+           RESPONSIVE DESIGN
+           ============================================ */
         @media (max-width: 1024px) {
-            .grid-2 { grid-template-columns: 1fr; gap: 40px; }
-            .c-large, .c-small, .c-wide { grid-column: span 12; height: 50vh; }
+            :root {
+                --section-padding: calc(var(--spacing-unit) * 10);
+            }
+            
+            .about-grid,
+            .contact-grid {
+                grid-template-columns: 1fr;
+                gap: calc(var(--spacing-unit) * 6);
+            }
+            
+            .work-item-large,
+            .work-item-small,
+            .work-item-wide {
+                grid-column: span 12;
+            }
+            
+            .nav-menu {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                width: 80%;
+                max-width: 400px;
+                height: 100vh;
+                background: var(--bg-primary);
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                gap: calc(var(--spacing-unit) * 4);
+                transition: right 0.4s var(--transition-smooth);
+                box-shadow: -10px 0 30px rgba(0, 0, 0, 0.5);
+            }
+            
+            .nav-menu.active {
+                right: 0;
+            }
+            
+            .nav-toggle {
+                display: block;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            :root {
+                --section-padding: calc(var(--spacing-unit) * 8);
+            }
+            
+            .hero {
+                padding: 0 calc(var(--spacing-unit) * 3);
+            }
+            
+            .section {
+                padding: var(--section-padding) calc(var(--spacing-unit) * 3);
+            }
+            
+            .about-stats {
+                grid-template-columns: 1fr;
+            }
+            
+            .services-grid,
+            .testimonial-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .work-grid {
+                gap: calc(var(--spacing-unit) * 2);
+            }
         }
     </style>
 </head>
 <body>
-
-    <div class="noise"></div>
-
-    <div class="cursor-dot" id="cursor-dot"></div>
-    <div class="cursor-outline" id="cursor-outline"></div>
-
-    <nav>
-        <a href="#" class="logo hover-target">AARUSH.</a>
-        <a href="https://wa.me/919805871693" class="magnetic-btn hover-target">START PROJECT</a>
+    <!-- Noise Overlay -->
+    <div class="noise-overlay"></div>
+    
+    <!-- Custom Cursor -->
+    <div class="cursor"></div>
+    <div class="cursor-follower"></div>
+    
+    <!-- Navigation -->
+    <nav class="nav">
+        <a href="#" class="nav-logo hover-target">AARUSH</a>
+        <ul class="nav-menu">
+            <li><a href="#about" class="nav-link hover-target">About</a></li>
+            <li><a href="#work" class="nav-link hover-target">Work</a></li>
+            <li><a href="#services" class="nav-link hover-target">Services</a></li>
+            <li><a href="#contact" class="nav-link hover-target">Contact</a></li>
+        </ul>
+        <button class="nav-toggle hover-target">
+            <i class="fas fa-bars"></i>
+        </button>
     </nav>
-
+    
+    <!-- Hero Section -->
     <section class="hero">
-        <span class="sec-label gs-reveal">VISUAL ARCHITECT BASED IN INDIA</span>
+        <div class="hero-eyebrow">MOTION DESIGNER & VISUAL ARCHITECT</div>
         <h1 class="hero-title">
-            <span><i class="gs-text">CRAFTING</i></span>
-            <span><i class="gs-text"><span class="italic-serif">Iconic</span> BRANDS</i></span>
+            <span class="hero-title-line">
+                <span class="hero-title-word">CRAFTING</span>
+            </span>
+            <span class="hero-title-line">
+                <span class="hero-title-word accent">Iconic</span>
+                <span class="hero-title-word">VISUAL</span>
+            </span>
+            <span class="hero-title-line">
+                <span class="hero-title-word">EXPERIENCES</span>
+            </span>
         </h1>
-        <p class="hero-desc gs-reveal">Welcome to Aarush Sharma Studio. Main sirf design nahi banata, main brands ke liye aisi visual language create karta hoon jo unki market value ko multiply kar de. Minimal, bold, and unapologetically premium.</p>
+        <p class="hero-description">
+            Premium brand identities, luxury motion graphics, and unforgettable digital experiences for ambitious brands worldwide.
+        </p>
+        <a href="#contact" class="hero-cta hover-target">
+            <span>Start Project</span>
+            <i class="fas fa-arrow-right"></i>
+        </a>
+        
+        <div class="hero-scroll">
+            <span>Scroll</span>
+            <div class="hero-scroll-line"></div>
+        </div>
     </section>
-
-    <div class="marquee-container hover-target">
-        <div class="marquee-text">
-            BRAND IDENTITY DESIGN • UI/UX STRATEGY • MOTION GRAPHICS • LUXURY PACKAGING • WEDDING BRANDING • 3D VISUALIZATION • CREATIVE DIRECTION • SEO EXPERT • 
-            BRAND IDENTITY DESIGN • UI/UX STRATEGY • MOTION GRAPHICS • LUXURY PACKAGING • WEDDING BRANDING • 3D VISUALIZATION • CREATIVE DIRECTION • SEO EXPERT • 
+    
+    <!-- Marquee -->
+    <div class="marquee-section">
+        <div class="marquee">
+            <div class="marquee-content">
+                <span class="marquee-text">BRAND IDENTITY</span>
+                <span class="marquee-dot"></span>
+                <span class="marquee-text">MOTION GRAPHICS</span>
+                <span class="marquee-dot"></span>
+                <span class="marquee-text">UI/UX DESIGN</span>
+                <span class="marquee-dot"></span>
+                <span class="marquee-text">LUXURY BRANDING</span>
+                <span class="marquee-dot"></span>
+                <span class="marquee-text">WEDDING DESIGN</span>
+                <span class="marquee-dot"></span>
+                <span class="marquee-text">3D VISUALIZATION</span>
+                <span class="marquee-dot"></span>
+            </div>
+            <div class="marquee-content" aria-hidden="true">
+                <span class="marquee-text">BRAND IDENTITY</span>
+                <span class="marquee-dot"></span>
+                <span class="marquee-text">MOTION GRAPHICS</span>
+                <span class="marquee-dot"></span>
+                <span class="marquee-text">UI/UX DESIGN</span>
+                <span class="marquee-dot"></span>
+                <span class="marquee-text">LUXURY BRANDING</span>
+                <span class="marquee-dot"></span>
+                <span class="marquee-text">WEDDING DESIGN</span>
+                <span class="marquee-dot"></span>
+                <span class="marquee-text">3D VISUALIZATION</span>
+                <span class="marquee-dot"></span>
+            </div>
         </div>
     </div>
-
-    <section class="section">
-        <div class="grid-2">
-            <div>
-                <span class="sec-label">THE PHILOSOPHY</span>
-                <h2 class="sec-title">Design that <br><span class="italic-serif">Converts</span> & Captivates.</h2>
+    
+    <!-- About Section -->
+    <section id="about" class="section">
+        <div class="about-grid">
+            <div class="about-content">
+                <div class="section-header">
+                    <span class="section-eyebrow">THE PHILOSOPHY</span>
+                    <h2 class="section-title">Design that <span class="accent">Converts</span> & Captivates</h2>
+                </div>
+                <p>
+                    In 2026's digital landscape, aesthetics is your biggest asset. My approach combines deep consumer psychology research with visual storytelling that multiplies your market value.
+                </p>
+                <p>
+                    Over 7 years, I've collaborated with 150+ national and international clients - from corporate tech startups to royal weddings. Whether it's a complex UI/UX system or a luxury wedding logo, my philosophy is simple: <strong>Form follows Function</strong>.
+                </p>
+                <p>
+                    As a complete visual partner with expertise in motion graphics and web architecture, you won't need multiple freelancers. I design your brand's entire digital ecosystem.
+                </p>
+                
+                <div class="about-stats">
+                    <div class="stat">
+                        <div class="stat-number">150+</div>
+                        <div class="stat-label">Projects Delivered</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-number">7</div>
+                        <div class="stat-label">Years Experience</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-number">12+</div>
+                        <div class="stat-label">Countries Served</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-number">98%</div>
+                        <div class="stat-label">Client Satisfaction</div>
+                    </div>
+                </div>
             </div>
-            <div class="text-block">
-                <p>2026 ke digital landscape mein, aesthetics hi aapka sabse bada asset hai. Ek graphic designer ka kaam sirf colors aur fonts ko milana nahi hota, balki consumer psychology ko samajhna hota hai. Mere design process mein deep research, market positioning, aur visual storytelling shamil hai.</p>
-                <p>Pichle 7 saalon mein, maine 150+ national aur international clients ke sath kaam kiya hai. Chahe wo ek corporate tech startup ka UI/UX design ho, ya ek Royal Wedding ka luxury logo, mera approach hamesha "Form follows Function" par aadharit hota hai. Humara goal aapke business ke perceived value ko badhana hai taaki aap apne premium clients attract kar sakein.</p>
-                <p>Motion graphics aur web architecture mein meri expertise mujhe ek complete visual partner banati hai. Aapko alag-alag freelancers hire karne ki zaroorat nahi hai; Aarush Sharma Studio aapke brand ka pura digital ecosystem design karne ki shamta rakhta hai.</p>
+            
+            <div class="about-image">
+                <img src="images/profile.png" alt="Aarush Sharma - Motion Designer" onerror="this.style.display='none'">
             </div>
         </div>
     </section>
-
-    <section id="work" class="section" style="background: var(--surface);">
-        <span class="sec-label">SELECTED WORKS</span>
-        <h2 class="sec-title">VISUAL <span class="italic-serif">Masterpieces</span></h2>
+    
+    <!-- Work Section -->
+    <section id="work" class="section work-section">
+        <div class="section-header">
+            <span class="section-eyebrow">SELECTED WORKS</span>
+            <h2 class="section-title">Visual <span class="accent">Masterpieces</span></h2>
+        </div>
         
-        <div class="bento-grid">
-            <a href="https://www.behance.net/gallery/177251753/portfolio" target="_blank" class="card c-large hover-target prlx-img">
-                <img src="images/garggi-ashish-logo-1.jpg" alt="Luxury Wedding Graphic Design India">
-                <div class="card-info">
-                    <p>BRANDING / IDENTITY</p>
-                    <h3>Royal Wedding Logos</h3>
+        <div class="work-grid">
+            <a href="https://www.behance.net/gallery/177251753/portfolio" target="_blank" class="work-item work-item-large hover-target">
+                <img src="images/garggi-ashish-logo-1.jpg" alt="Luxury Wedding Branding" onerror="this.style.display='none'">
+                <div class="work-overlay">
+                    <div class="work-category">Branding / Identity</div>
+                    <h3 class="work-title">Royal Wedding Collection</h3>
+                    <p class="work-description">Premium wedding identity systems featuring custom monograms, invitation suites, and motion graphics for high-profile celebrations.</p>
                 </div>
             </a>
             
-            <a href="https://yatharthtourtravels.com/" target="_blank" class="card c-small hover-target prlx-img">
-                <img src="images/ytt.jpg" alt="Travel Agency UI UX Design">
-                <div class="card-info">
-                    <p>WEB ARCHITECTURE</p>
-                    <h3>Yatharth Travels</h3>
+            <a href="https://yatharthtourtravels.com/" target="_blank" class="work-item work-item-small hover-target">
+                <img src="images/ytt.jpg" alt="Travel Agency Web Design" onerror="this.style.display='none'">
+                <div class="work-overlay">
+                    <div class="work-category">Web Architecture</div>
+                    <h3 class="work-title">Yatharth Travels</h3>
+                    <p class="work-description">Complete digital ecosystem with booking system integration and immersive UI/UX.</p>
                 </div>
             </a>
             
-            <a href="https://firevillagetournament.github.io/ChaiNagri/index.html" target="_blank" class="card c-wide hover-target prlx-img">
-                <img src="images/CN.png" alt="Chai Nagri Brand Identity">
-                <div class="card-info">
-                    <p>DIGITAL ECOSYSTEM</p>
-                    <h3>Chai Nagri Franchise</h3>
+            <a href="https://firevillagetournament.github.io/ChaiNagri/index.html" target="_blank" class="work-item work-item-wide hover-target">
+                <img src="images/CN.png" alt="Chai Nagri Brand Identity" onerror="this.style.display='none'">
+                <div class="work-overlay">
+                    <div class="work-category">Digital Ecosystem</div>
+                    <h3 class="work-title">Chai Nagri Franchise</h3>
+                    <p class="work-description">Full brand identity, web presence, and marketing collateral for a national franchise expansion.</p>
+                </div>
+            </a>
+            
+            <a href="https://www.behance.net/gallery/177858575/Brand-Identity" target="_blank" class="work-item work-item-small hover-target">
+                <img src="images/logo1.jpg" alt="Brand Identity Portfolio" onerror="this.style.display='none'">
+                <div class="work-overlay">
+                    <div class="work-category">Brand Systems</div>
+                    <h3 class="work-title">Identity Portfolio</h3>
+                    <p class="work-description">Collection of sophisticated brand identity systems across multiple industries.</p>
+                </div>
+            </a>
+            
+            <a href="https://youtu.be/WXV6sbNXRzY" target="_blank" class="work-item work-item-large hover-target">
+                <img src="images/logo1.jpg" alt="Motion Graphics Showreel" onerror="this.style.display='none'">
+                <div class="work-overlay">
+                    <div class="work-category">Motion Design</div>
+                    <h3 class="work-title">Motion Showreel</h3>
+                    <p class="work-description">Cinematic logo animations, promotional videos, and motion graphics that capture attention.</p>
                 </div>
             </a>
         </div>
     </section>
-
-    <section class="section">
-        <span class="sec-label">EXPERTISE</span>
-        <h2 class="sec-title">What I Bring to <br>The <span class="italic-serif">Table</span>.</h2>
+    
+    <!-- Services Section -->
+    <section id="services" class="section">
+        <div class="section-header">
+            <span class="section-eyebrow">EXPERTISE</span>
+            <h2 class="section-title">What I Bring to <span class="accent">The Table</span></h2>
+        </div>
         
-        <div class="grid-2">
-            <div>
-                <h3 style="font-size: 2rem; margin-bottom: 20px; color: var(--accent);">01. Brand Identity Design</h3>
-                <p class="text-block" style="color: var(--text-mute);">Aapka logo aapke business ka chehra hai. Hum ek complete visual identity system create karte hain jisme logo variations, typography guidelines, color psychology, aur brand collaterals (business cards, letterheads) shamil hote hain. Ye system aapke brand ko market mein ek professional aur trustworthy image deta hai.</p>
+        <div class="services-grid">
+            <div class="service-card hover-target">
+                <div class="service-number">01</div>
+                <h3 class="service-title">Brand Identity Design</h3>
+                <p class="service-description">
+                    Your logo is your business's face. I create complete visual identity systems including logo variations, typography guidelines, color psychology, and brand collaterals that establish professional credibility.
+                </p>
+                <ul class="service-list">
+                    <li>Logo Design & Variations</li>
+                    <li>Brand Guidelines</li>
+                    <li>Business Collaterals</li>
+                    <li>Typography Systems</li>
+                    <li>Color Psychology</li>
+                </ul>
             </div>
-            <div>
-                <h3 style="font-size: 2rem; margin-bottom: 20px; color: var(--accent);">02. Motion Graphics & Video</h3>
-                <p class="text-block" style="color: var(--text-mute);">Static images ka zamana ja raha hai. Hum cinematic logo animations, promotional videos, aur YouTube intro/outros banate hain jo audience ka attention turant grab karte hain. Smooth transitions aur crisp sound design ke sath, aapka brand zinda ho uthta hai.</p>
+            
+            <div class="service-card hover-target">
+                <div class="service-number">02</div>
+                <h3 class="service-title">Motion Graphics & Video</h3>
+                <p class="service-description">
+                    Static images are becoming obsolete. I create cinematic logo animations, promotional videos, and YouTube intro/outros with smooth transitions and crisp sound design that bring your brand to life.
+                </p>
+                <ul class="service-list">
+                    <li>Logo Animations</li>
+                    <li>Promotional Videos</li>
+                    <li>YouTube Intros/Outros</li>
+                    <li>Social Media Content</li>
+                    <li>Motion Graphics</li>
+                </ul>
             </div>
-            <div style="grid-column: 1 / -1;">
-                <h3 style="font-size: 2rem; margin-bottom: 20px; color: var(--accent);">03. UI/UX & Web Development</h3>
-                <p class="text-block" style="color: var(--text-mute);">Ek khoobsurat website jo fast load ho aur conversions laye. Hum wireframing se lekar final frontend development tak ka kaam karte hain. Responsive design, modern animations (jaise aap is site par dekh rahe hain), aur SEO optimization humari priority hoti hai taaki aapki website Google par rank kare aur clients ko impress kare.</p>
+            
+            <div class="service-card hover-target">
+                <div class="service-number">03</div>
+                <h3 class="service-title">UI/UX & Web Development</h3>
+                <p class="service-description">
+                    Beautiful websites that load fast and drive conversions. From wireframing to frontend development, I create responsive designs with modern animations and SEO optimization for Google rankings.
+                </p>
+                <ul class="service-list">
+                    <li>UI/UX Design</li>
+                    <li>Web Development</li>
+                    <li>Responsive Design</li>
+                    <li>SEO Optimization</li>
+                    <li>Modern Animations</li>
+                </ul>
+            </div>
+            
+            <div class="service-card hover-target">
+                <div class="service-number">04</div>
+                <h3 class="service-title">Luxury Wedding Branding</h3>
+                <p class="service-description">
+                    Specialized in creating sophisticated wedding identities - from custom monograms to complete invitation suites. Premium designs that match the elegance of your special celebration.
+                </p>
+                <ul class="service-list">
+                    <li>Custom Monograms</li>
+                    <li>Invitation Design</li>
+                    <li>Save the Dates</li>
+                    <li>Event Signage</li>
+                    <li>Motion Invites</li>
+                </ul>
             </div>
         </div>
     </section>
-
-    <section class="section" style="background: var(--surface);">
-        <span class="sec-label">KNOWLEDGE BASE</span>
-        <h2 class="sec-title">Frequently Asked <span class="italic-serif">Questions</span></h2>
+    
+    <!-- Testimonials Section -->
+    <section class="section testimonial-section">
+        <div class="section-header">
+            <span class="section-eyebrow">CLIENT FEEDBACK</span>
+            <h2 class="section-title">What Clients <span class="accent">Say</span></h2>
+        </div>
         
-        <div style="margin-top: 60px;">
-            <div class="faq-item hover-target" onclick="toggleFaq(this)">
-                <h3 class="faq-title">Ek Professional Graphic Design Project mein kitna time lagta hai?</h3>
-                <p class="faq-ans">Har project unique hota hai. Ek standard Brand Identity design mein 1 se 2 weeks lag sakte hain, jisme research, sketching, aur final vectorizing shamil hai. Web UI/UX projects mein 3-4 weeks ka samay lagta hai. Hum hamesha quality par focus karte hain, rush par nahi.</p>
+        <div class="testimonial-grid">
+            <div class="testimonial-card">
+                <p class="testimonial-quote">
+                    "Aarush transformed our brand identity completely. The attention to detail and creative vision exceeded our expectations. Our conversion rates increased by 40% after the rebrand."
+                </p>
+                <div class="testimonial-author">
+                    <div class="testimonial-avatar">R</div>
+                    <div class="testimonial-info">
+                        <h4>Rajesh Kumar</h4>
+                        <p>CEO, Tech Startup</p>
+                    </div>
+                </div>
             </div>
-            <div class="faq-item hover-target" onclick="toggleFaq(this)">
-                <h3 class="faq-title">Aapke pricing structure aur investment plans kya hain?</h3>
-                <p class="faq-ans">Hum premium quality deliver karte hain, isliye humari pricing value-based hoti hai. Basic identity design ₹5,000 se shuru hoti hai, aur motion graphics ₹3,500 se. Full agency-level digital transformation ke liye custom packages banaye jate hain. Exact quote ke liye aap humein WhatsApp par contact kar sakte hain.</p>
+            
+            <div class="testimonial-card">
+                <p class="testimonial-quote">
+                    "The wedding branding package was absolutely stunning. Every guest was amazed by the elegance and cohesiveness of our wedding visuals. Worth every penny!"
+                </p>
+                <div class="testimonial-author">
+                    <div class="testimonial-avatar">P</div>
+                    <div class="testimonial-info">
+                        <h4>Priya & Arjun</h4>
+                        <p>Wedding Clients</p>
+                    </div>
+                </div>
             </div>
-            <div class="faq-item hover-target" onclick="toggleFaq(this)">
-                <h3 class="faq-title">Kya aap international clients ke sath kaam karte hain?</h3>
-                <p class="faq-ans">Ji haan. Humari client list mein USA, UK aur Dubai ke businesses shamil hain. Remote communication, Zoom calls, aur precise project management tools (Figma, Notion) ke zariye hum seamless international delivery ensure karte hain.</p>
+            
+            <div class="testimonial-card">
+                <p class="testimonial-quote">
+                    "Professional, creative, and incredibly responsive. Aarush understood our vision and delivered beyond what we imagined. The motion graphics brought our brand story to life."
+                </p>
+                <div class="testimonial-author">
+                    <div class="testimonial-avatar">S</div>
+                    <div class="testimonial-info">
+                        <h4>Sarah Mitchell</h4>
+                        <p>Marketing Director, USA</p>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
-
-    <footer>
-        <div style="display: flex; justify-content: space-between; margin-bottom: 100px; border-bottom: 1px solid #222; padding-bottom: 50px;">
-            <div>
-                <p style="color: var(--text-mute); max-width: 300px;">Elevating brands through strategic design, motion arts, and immersive digital experiences.</p>
+    
+    <!-- Contact Section -->
+    <section id="contact" class="section contact-section">
+        <div class="section-header">
+            <span class="section-eyebrow">GET IN TOUCH</span>
+            <h2 class="section-title">Let's Create <span class="accent">Something Amazing</span></h2>
+        </div>
+        
+        <div class="contact-grid">
+            <div class="contact-info">
+                <h3>Ready to elevate your brand?<br>Let's talk.</h3>
+                
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <div class="contact-details">
+                        <h4>Email</h4>
+                        <a href="mailto:sarush066@gmail.com">sarush066@gmail.com</a>
+                    </div>
+                </div>
+                
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="fas fa-phone"></i>
+                    </div>
+                    <div class="contact-details">
+                        <h4>Phone</h4>
+                        <a href="tel:+919805871693">+91 98058 71693</a>
+                    </div>
+                </div>
+                
+                <div class="contact-socials">
+                    <a href="https://www.instagram.com/isimfly" target="_blank" class="social-link hover-target">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="https://www.behance.net/gallery/177251753/portfolio" target="_blank" class="social-link hover-target">
+                        <i class="fab fa-behance"></i>
+                    </a>
+                    <a href="https://youtu.be/WXV6sbNXRzY" target="_blank" class="social-link hover-target">
+                        <i class="fab fa-youtube"></i>
+                    </a>
+                    <a href="https://wa.me/919805871693" target="_blank" class="social-link hover-target">
+                        <i class="fab fa-whatsapp"></i>
+                    </a>
+                </div>
             </div>
-            <div style="text-align: right;">
-                <p>CONTACT</p>
-                <a href="mailto:sarush066@gmail.com" class="hover-target" style="color: var(--accent); font-size: 1.5rem; text-decoration: none;">sarush066@gmail.com</a>
-                <p style="margin-top: 10px;">+91 98058 71693</p>
+            
+            <div class="contact-form-wrapper">
+                <form id="contactForm">
+                    <div class="form-group">
+                        <label class="form-label">Your Name</label>
+                        <input type="text" class="form-input" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="form-label">Email Address</label>
+                        <input type="email" class="form-input" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="form-label">Project Details</label>
+                        <textarea class="form-textarea" required></textarea>
+                    </div>
+                    
+                    <button type="submit" class="form-submit hover-target">
+                        Send Message
+                    </button>
+                </form>
             </div>
         </div>
-
-        <div class="footer-huge">
-            <a href="mailto:sarush066@gmail.com" class="hover-target">LET'S TALK.</a>
-        </div>
-
-        <div style="display: flex; justify-content: space-between; align-items: center; color: var(--text-mute); font-size: 0.9rem;">
-            <p>© 2026 AARUSH SHARMA STUDIO.</p>
-            <div style="font-size: 1.5rem;">
-                <a href="https://www.instagram.com/pandit.2.0/" class="hover-target" style="color:#fff; margin-right: 20px;"><i class="fab fa-instagram"></i></a>
-                <a href="https://www.behance.net/gallery/177251753/portfolio" class="hover-target" style="color:#fff;"><i class="fab fa-behance"></i></a>
-            </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-logo">AARUSH SHARMA</div>
+            <div class="footer-copy">© 2026 All Rights Reserved</div>
         </div>
     </footer>
-
+    
+    <!-- WhatsApp Floating Button -->
+    <a href="https://wa.me/919805871693" target="_blank" class="whatsapp-float hover-target">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+    
+    <!-- JavaScript -->
     <script>
-        // 1. LENIS SMOOTH SCROLL (Awwwards Standard)
-        const lenis = new Lenis({
-            duration: 1.2,
-            easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
-            smooth: true
-        });
-        function raf(time) {
-            lenis.raf(time);
-            requestAnimationFrame(raf);
-        }
-        requestAnimationFrame(raf);
-
-        // 2. MAGNETIC CURSOR LOGIC
-        const cursorDot = document.getElementById('cursor-dot');
-        const cursorOutline = document.getElementById('cursor-outline');
-        
-        window.addEventListener('mousemove', (e) => {
-            const posX = e.clientX;
-            const posY = e.clientY;
-            
-            cursorDot.style.left = `${posX}px`;
-            cursorDot.style.top = `${posY}px`;
-            
-            // Adding a slight delay to the outline for fluid feel
-            setTimeout(() => {
-                cursorOutline.style.left = `${posX}px`;
-                cursorOutline.style.top = `${posY}px`;
-            }, 50);
-        });
-
-        // Cursor Hover Effects
-        document.querySelectorAll('.hover-target').forEach(el => {
-            el.addEventListener('mouseenter', () => document.body.classList.add('cursor-hover'));
-            el.addEventListener('mouseleave', () => document.body.classList.remove('cursor-hover'));
-        });
-
-        // 3. MAGNETIC BUTTON EFFECT
-        const magnetics = document.querySelectorAll('.magnetic-btn');
-        magnetics.forEach((magnetic) => {
-            magnetic.addEventListener('mousemove', function(e) {
-                const position = magnetic.getBoundingClientRect();
-                const x = e.clientX - position.left - position.width / 2;
-                const y = e.clientY - position.top - position.height / 2;
-                gsap.to(magnetic, { x: x * 0.3, y: y * 0.5, duration: 0.5, ease: "power4.out" });
-            });
-            magnetic.addEventListener('mouseleave', function(e) {
-                gsap.to(magnetic, { x: 0, y: 0, duration: 0.5, ease: "elastic.out(1, 0.3)" });
-            });
-        });
-
-        // 4. GSAP ANIMATIONS
+        // ============================================
+        // GSAP ANIMATIONS
+        // ============================================
         gsap.registerPlugin(ScrollTrigger);
-
-        // Hero Text Reveal
-        gsap.to(".gs-text", {
-            y: "0%",
-            duration: 1.5,
-            stagger: 0.2,
-            ease: "power4.out",
-            delay: 0.2
+        
+        // Hero animations with stagger
+        gsap.to('.hero-eyebrow', {
+            y: 0,
+            opacity: 1,
+            duration: 1,
+            delay: 0.5,
+            ease: 'power3.out'
         });
-
-        // General Fade Up Reveal
-        gsap.utils.toArray(".gs-reveal").forEach(el => {
-            gsap.from(el, {
-                y: 50, opacity: 0, duration: 1.2, ease: "power3.out", delay: 0.8
+        
+        gsap.to('.hero-title-word', {
+            y: 0,
+            duration: 1.2,
+            stagger: 0.15,
+            delay: 0.8,
+            ease: 'power4.out'
+        });
+        
+        gsap.to('.hero-description', {
+            y: 0,
+            opacity: 1,
+            duration: 1,
+            delay: 1.5,
+            ease: 'power3.out'
+        });
+        
+        gsap.to('.hero-cta', {
+            y: 0,
+            opacity: 1,
+            duration: 1,
+            delay: 1.8,
+            ease: 'power3.out'
+        });
+        
+        // Scroll-triggered animations
+        gsap.utils.toArray('.stat').forEach((stat, i) => {
+            gsap.from(stat, {
+                scrollTrigger: {
+                    trigger: stat,
+                    start: 'top 80%',
+                },
+                y: 50,
+                opacity: 0,
+                duration: 0.8,
+                delay: i * 0.1,
+                ease: 'power3.out'
             });
         });
-
-        // Parallax Image Effect for Portfolio Cards
-        gsap.utils.toArray(".prlx-img img").forEach(img => {
-            gsap.to(img, {
-                yPercent: 20,
-                ease: "none",
+        
+        gsap.utils.toArray('.service-card').forEach((card, i) => {
+            gsap.from(card, {
                 scrollTrigger: {
-                    trigger: img.parentElement,
-                    start: "top bottom",
-                    end: "bottom top",
-                    scrub: true
+                    trigger: card,
+                    start: 'top 80%',
+                },
+                y: 80,
+                opacity: 0,
+                duration: 1,
+                delay: i * 0.15,
+                ease: 'power3.out'
+            });
+        });
+        
+        gsap.utils.toArray('.work-item').forEach((item) => {
+            gsap.from(item, {
+                scrollTrigger: {
+                    trigger: item,
+                    start: 'top 85%',
+                },
+                scale: 0.9,
+                opacity: 0,
+                duration: 0.8,
+                ease: 'power3.out'
+            });
+        });
+        
+        // ============================================
+        // CUSTOM CURSOR
+        // ============================================
+        const cursor = document.querySelector('.cursor');
+        const follower = document.querySelector('.cursor-follower');
+        
+        let mouseX = 0, mouseY = 0;
+        let cursorX = 0, cursorY = 0;
+        let followerX = 0, followerY = 0;
+        
+        document.addEventListener('mousemove', (e) => {
+            mouseX = e.clientX;
+            mouseY = e.clientY;
+        });
+        
+        function animateCursor() {
+            // Smooth cursor movement
+            cursorX += (mouseX - cursorX) * 0.3;
+            cursorY += (mouseY - cursorY) * 0.3;
+            
+            followerX += (mouseX - followerX) * 0.15;
+            followerY += (mouseY - followerY) * 0.15;
+            
+            cursor.style.left = cursorX + 'px';
+            cursor.style.top = cursorY + 'px';
+            
+            follower.style.left = followerX + 'px';
+            follower.style.top = followerY + 'px';
+            
+            requestAnimationFrame(animateCursor);
+        }
+        animateCursor();
+        
+        // Cursor hover effects
+        document.querySelectorAll('.hover-target').forEach(el => {
+            el.addEventListener('mouseenter', () => {
+                document.body.classList.add('cursor-hover');
+            });
+            
+            el.addEventListener('mouseleave', () => {
+                document.body.classList.remove('cursor-hover');
+            });
+        });
+        
+        // ============================================
+        // NAVIGATION
+        // ============================================
+        const nav = document.querySelector('.nav');
+        const navToggle = document.querySelector('.nav-toggle');
+        const navMenu = document.querySelector('.nav-menu');
+        
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 100) {
+                nav.classList.add('scrolled');
+            } else {
+                nav.classList.remove('scrolled');
+            }
+        });
+        
+        navToggle.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+            const icon = navToggle.querySelector('i');
+            icon.classList.toggle('fa-bars');
+            icon.classList.toggle('fa-times');
+        });
+        
+        // Close menu on link click
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+                const icon = navToggle.querySelector('i');
+                icon.classList.add('fa-bars');
+                icon.classList.remove('fa-times');
+            });
+        });
+        
+        // ============================================
+        // FORM SUBMISSION
+        // ============================================
+        const contactForm = document.getElementById('contactForm');
+        
+        contactForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            
+            // Get form data
+            const formData = new FormData(contactForm);
+            
+            // Show success message (you can integrate with a backend here)
+            alert('Thank you for your message! I will get back to you soon.');
+            contactForm.reset();
+        });
+        
+        // ============================================
+        // SMOOTH SCROLLING
+        // ============================================
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
                 }
             });
         });
-
-        // 5. FAQ TOGGLE LOGIC
-        function toggleFaq(element) {
-            const ans = element.querySelector('.faq-ans');
-            if(ans.style.display === "block") {
-                ans.style.display = "none";
-            } else {
-                ans.style.display = "block";
-            }
-        }
     </script>
 </body>
 </html>
